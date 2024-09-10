@@ -4,6 +4,12 @@ from rest_framework import status
 from .models import Product
 from .serializers import ProductSerializer
 
+from django.shortcuts import render
+
+
+def product_page(request):
+    return render(request, "products/products.html")
+
 
 @api_view(["GET", "POST"])
 def product_list_create(request):

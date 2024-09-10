@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'products/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Products</h1>
+
+        <form id="productForm" class="mb-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Product Name" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" id="description" placeholder="Description" required></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="number" class="form-control" id="price" placeholder="Price" step="0.01" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+
+        <h2>Product List</h2>
+        <table id="productTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Products will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'products/js/script.js' %}"></script>
+</body>
+</html>
