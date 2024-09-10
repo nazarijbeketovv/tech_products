@@ -14,7 +14,7 @@ def product_page(request):
 @api_view(["GET", "POST"])
 def product_list_create(request):
     if request.method == "GET":
-        products = Product.objects.all()
+        products = Product.objects.order_by("-created_at")
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 

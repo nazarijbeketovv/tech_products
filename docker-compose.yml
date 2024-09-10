@@ -1,0 +1,32 @@
+services:
+  web-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - "8000:8000"
+
+    restart: always
+    volumes:
+      - .:/app
+
+    entrypoint: ./entrypoint.sh
+
+
+  nginx:
+    build: 
+     context: ./nginx
+     dockerfile: Dockerfile
+    
+    ports:
+      - "80:80"
+    depends_on:
+      - web-app
+    volumes:
+      - ./static:/static
+
+  
+
+
+    

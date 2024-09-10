@@ -1,0 +1,45 @@
+.alert-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    z-index: 1000;
+}
+
+table {
+    margin-top: 40px;
+    text-align: center;
+
+}
+
+.product-form {
+    max-width: 800px;
+    text-align: center;
+    margin-top: 40px;
+
+   
+    
+}
+
+#productForm {
+
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+.article {
+    margin-top: 70px;
+
+}
+
+thead th {
+    text-align: center;
+}
+
+tbody td {
+    text-align: center;
+}
